@@ -4,7 +4,7 @@ const http = require('http');
 const path = require('path');
 
 //Config
-const PORT = process.env.PORT || 8080; //Math.ceil(8000 + (Math.random() * 1000));
+const PORT = process.env.PORT || 8888; //Math.ceil(8000 + (Math.random() * 1000));
 
 //Load Config:
 const config = require("./data/options.json");
