@@ -129,7 +129,10 @@ const handler = (req, res) => {
 			return fs.readFile(filepath, (err, data) => {
 				if (err && err.code == 'ENOENT') return error(req, res, "404")
 				if (err) return error(req, res, "401", err);
-				
+
+				if (filepath.endsWith(".mp3")) {
+   					res.setHeader('Content-type', 'audio/mpeg');
+				}
 				res.writeHead(200);
 				res.end(data);
 
